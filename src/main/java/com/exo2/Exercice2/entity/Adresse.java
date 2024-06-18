@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "adresse")
+@Table(name = "adresse", indexes = @Index(name = "idx_adresse_ville", columnList = "ville"))
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,6 +16,7 @@ public class Adresse {
     @Column(name = "adresse_id")
     private Long id;
 
+    @Column(name = "ville")
     private String ville;
     private String complementAdresse;
     private int codePostal;
